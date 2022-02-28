@@ -1,4 +1,4 @@
-let Car = function() {
+let Car = function(number) {
     this.turn = function() {
         this.on = confirm('Вы завели машину?');
         if (this.on) {
@@ -80,3 +80,14 @@ car2.show();
 // car2.classAuto = 'бизнес';
 
 console.log(car2);  //почему в прото сохраняется + имя первой????
+
+
+//Функциональное наследование
+let Moto = function(name) {
+    Car.apply(this, arguments)
+    this.name = name;
+}
+
+let bike = new Moto('motorcycle', 'rrrt55');
+bike.show();
+console.log(bike) //Как рабоает arguments????
